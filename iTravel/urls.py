@@ -20,5 +20,6 @@ from travello import views
 urlpatterns = [
     path('',views.homepage),
     path('profile/',include('travello.urls')),
+    path('',include('travello.urls')),
     path('admin/', admin.site.urls),
 ]
