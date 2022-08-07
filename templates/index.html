@@ -154,6 +154,14 @@
 
         <div class="tripList">
             <div class="row">
+                {% static 'images' as baseURL %}
+                <div class="col-md-4 trip">
+                    <span class="notify-badge">NEW</span>
+                    <img src="{{baseURL}}/{{dest1.img}}" alt="" class="tripImage">
+                    <div class="tripTitle">{{dest1.name}}</div>
+                    <div class="tripDescription">{{dest1.desc}}</div>
+                    <div class="tripCost">From ${{dest1.price}}</div>
+                </div>
                 <div class="col-md-4 trip">
                     <span class="notify-badge">NEW</span>
                     <img src="{% static 'images/destination_1.jpg' %}" alt="" class="tripImage">
