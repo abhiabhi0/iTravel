@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def homepage(request):
-    est=models.Destination()
+    dest=models.Destination()
     dest.id=1
     dest.name='Hyderabad'
     dest.desc='The Ethnic City'
