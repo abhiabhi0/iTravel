@@ -155,52 +155,16 @@
         <div class="tripList">
             <div class="row">
                 {% static 'images' as baseURL %}
+                {% for dest in dests %}
                 <div class="col-md-4 trip">
+                    {% if dest.offer %}
+                        <span class="notify-badge">OFFER</span>
+                    {% endif %}
                     <span class="notify-badge">NEW</span>
-                    <img src="{{baseURL}}/{{dest1.img}}" alt="" class="tripImage">
-                    <div class="tripTitle">{{dest1.name}}</div>
-                    <div class="tripDescription">{{dest1.desc}}</div>
-                    <div class="tripCost">From ${{dest1.price}}</div>
-                </div>
-                <div class="col-md-4 trip">
-                    <span class="notify-badge">NEW</span>
-                    <img src="{% static 'images/destination_1.jpg' %}" alt="" class="tripImage">
-                    <div class="tripTitle">Bali</div>
-                    <div class="tripDescription">Nulla pretium tincidunt felis, nec.</div>
-                    <div class="tripCost">From ${{price}}</div>
-                </div>
-                <div class="col-md-4 trip">
-                    <span class="notify-badge">NEW</span>
-                    <img src="{% static 'images/destination_2.jpg' %}" alt="" class="tripImage">
-                    <div class="tripTitle">Indonesia</div>
-                    <div class="tripDescription">Nulla pretium tincidunt felis, nec.</div>
-                    <div class="tripCost">From $679</div>
-                </div>
-                <div class="col-md-4 trip">
-                    <span class="notify-badge">NEW</span>
-                    <img src="{% static 'images/destination_3.jpg' %}" alt="" class="tripImage">
-                    <div class="tripTitle">San Francisco</div>
-                    <div class="tripDescription">Nulla pretium tincidunt felis, nec.</div>
-                    <div class="tripCost">From $679</div>
-
-                </div>
-                <div class="col-md-4 trip">
-                    <img src="{% static 'images/destination_4.jpg' %}" alt="" class="tripImage">
-                    <div class="tripTitle">Paris</div>
-                    <div class="tripDescription">Nulla pretium tincidunt felis, nec.</div>
-                    <div class="tripCost">From $679</div>
-                </div>
-                <div class="col-md-4 trip">
-                    <img src="{% static 'images/destination_5.jpg' %}" alt="" class="tripImage">
-                    <div class="tripTitle">Phi Phi Island</div>
-                    <div class="tripDescription">Nulla pretium tincidunt felis, nec.</div>
-                    <div class="tripCost">From $679</div>
-                </div>
-                <div class="col-md-4 trip">
-                    <img src="{% static 'images/destination_6.jpg' %}" alt="" class="tripImage">
-                    <div class="tripTitle">Mykonos</div>
-                    <div class="tripDescription">Nulla pretium tincidunt felis, nec.</div>
-                    <div class="tripCost">From $679</div>
+                    <img src="{{dest.image.url}}" alt="" class="tripImage">
+                    <div class="tripTitle">{{dest.name}}</div>
+                    <div class="tripDescription">{{dest.desc}}</div>
+                    <div class="tripCost">From ${{dest.price}}</div>
                 </div>
             </div>
         </div>

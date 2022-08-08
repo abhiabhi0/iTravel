@@ -2,13 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def homepage(request):
-    dest=models.Destination()
-    dest.id=1
-    dest.name='Hyderabad'
-    dest.desc='The Ethnic City'
-    dest.img='destination_1.jpg'
-    dest.price=500
-    return render(request,'index.html',{'dest1':dest})
+    dests=Destination.objects.all()
+    return render(request,'index.html',{'dests':dests})
 
 def view_profile(request):
     pass
