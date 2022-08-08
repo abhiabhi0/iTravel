@@ -13,3 +13,6 @@ def edit_profile(request):
 
 def delete_profile(request):
     pass
+
+def user_register(request):
+    return render(request,'register.html')
