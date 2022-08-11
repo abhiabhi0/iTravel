@@ -20,7 +20,13 @@ def user_register(request):
 def dest_details(request,dest_id):
     dest=list(Destination.objects.filter(id=dest_id))
     if dest:
-        return render(request,'destination.html',{'dest':dest[0]})
+        d = request.COOKIES.setdefault('recent_destinations', '')
+        if dest.name not in d.split('\n'):
+            d = d+'\n'+dest.name
+            d = d.strip('\n')
+        response = render(request, 'destination.html', {'dest':dest})
+        response.set_cookies('recent_destinations', d)
+        return response
 
 def dest_add(request):
     if request.method=='POST':

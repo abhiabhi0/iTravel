@@ -173,7 +173,12 @@
                             <div class="tripDescription">{{dest.desc}}</div>
                             <div class="tripCost">From ${{dest.price}}</div>
                     </div></a>
+                {% endfor %}
             </div>
+        {% if request.COOKIES.recent_destinations %}
+        <div class="tripTitle">Recent Destinations</div>
+        {{request.COOKIES.recent_destinations}}
+        {% endif %}
         </div>
         <br>
         <br>
