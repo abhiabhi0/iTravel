@@ -27,3 +27,22 @@ def user_register(request):
             return render(request,'register.html')
     else:
         return render(request,'register.html')
+
+def user_login(request):
+    if request.method=='POST':
+        username=request.POST['username']
+        password=request.POST['password']
+        user=auth.authenticate(username=username,password=password)
+        if(user):
+            auth.login(request,user)
+            return redirect('/')
+        else:
+            messages.info(request,'Invalid Credentials')
+            return render(request,'login.html')
+    else:
+        return render(request,'login.html')
+
+def user_logout(request):
+    auth.logout(request)
+    return redirect('/')
+
