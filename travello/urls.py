@@ -7,5 +7,6 @@ app_name='Travello'
 
 urlpatterns = [
     path('',views.homepage),
-    path('destination/<int:dest_id>',views.dest_details,name='details')
+    path('destination/<int:dest_id>',views.dest_details,name='details'),
+    path('add',views.dest_add,name='add_destination')
 ]

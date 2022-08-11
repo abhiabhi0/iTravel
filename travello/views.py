@@ -21,3 +21,15 @@ def dest_details(request,dest_id):
     dest=list(Destination.objects.filter(id=dest_id))
     if dest:
         return render(request,'destination.html',{'dest':dest[0]})
+
+def dest_add(request):
+    if request.method=='POST':
+        form = DestinationForm(request.POST,request.FILES)
+        print(request.POST,request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+        else:
+            messages.info(request,'Error while creating Destination')
+    return render(request,'destinationForm.html',{'form':DestinationForm()})
+
