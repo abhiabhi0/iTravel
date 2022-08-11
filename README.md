@@ -1,4 +1,4 @@
-# iTravel - Travel Website Web App
+# iTravel - Travel Web App
 
 - Used MVT (Model-View-Template) architecture of Django
 - Created models
