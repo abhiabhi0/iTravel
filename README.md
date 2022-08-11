@@ -6,7 +6,7 @@
 - Created and Consumed REST APIs 
 - Deployed on Apache Web Server
 
-//Image
+![mvt](https://github.com/programmercave0/iTravel/blob/main/images/django-mvt1.png)
 
 Request mapping for the flow specified above is illustrated as follows:
 
