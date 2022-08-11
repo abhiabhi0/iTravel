@@ -1,5 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.shortcuts import render,redirect
+from .models import Destination
+from .forms import DestinationForm
+from django.contrib import messages
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .serializers import DestinationSerializer
 
 def homepage(request):
     dests=Destination.objects.all()
@@ -39,3 +46,8 @@ def dest_add(request):
             messages.info(request,'Error while creating Destination')
     return render(request,'destinationForm.html',{'form':DestinationForm()})
 
+@api_view(['GET'])
+def get_all_destinations(request):
+    dests=Destination.objects.all()
+    serializer=DestinationSerializer(dests,many=True)
+    return Response(serializer.data)
