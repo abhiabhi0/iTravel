@@ -1,5 +1,11 @@
 # iTravel - Travel Web App
 
+Website displays destination to travel and other informations like price.
+
+Admin can login and add or update destination and details.
+
+User can also register, login and logout.
+
 - Used MVT (Model-View-Template) architecture of Django
 - Created models
 - Connected to database using ORM
